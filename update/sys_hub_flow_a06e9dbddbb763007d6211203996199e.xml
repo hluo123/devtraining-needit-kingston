@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <description>1, The flow as part of the NeedIt application.
+2, Run the flow weekly on Fridays at 11 pm.
+3, Get the value of the x_58872_needit.autoCloseOverdue application property to determine how old a task should be to automatically close it.
+4, Use the Get Days Ago Date action to calculate the overdue date to compare against due dates.
+5, Find open NeedIt Tasks with a Due date older than the number of days set in the property.
+6, Update each overdue NeedIt Task.
+   - Set the State to Closed Incomplete.
+   - Update the Work notes to state that the Record was closed because it was too far past the due date.
+7, Write a message to the log to state that the NeedIt Task record was automatically closed. Be sure to include the NeedIt Task number in the log.
+8, Save and test the flow.
+9, View the NeedIt Task records and the System Log to verify results.</description>
+        <label_cache>[{"name":"124e9bf6-66c2-413d-ac81-15403c1d0c05.property_value","label":"1➛property_value","type":"string","base_type":"string"},{"name":"ff142c29-d250-4077-876b-0604dad90a33.calculated_date","label":"2➛calculated_date","type":"glide_date","base_type":"glide_date"},{"name":"4afe3d77-edbf-4912-ba2f-c7f32ce4b1f3.Records","label":"3➛NeedIt Task Records","reference":"x_58872_needit_needit_task","reference_display":"NeedIt Task","type":"records","base_type":"records"},{"name":"7da2305e-8cc9-4ca8-81f2-e85c496ffa49.item","label":"4➛NeedIt Task Record","reference":"x_58872_needit_needit_task","reference_display":"NeedIt Task","type":"reference","base_type":"reference"},{"name":"7da2305e-8cc9-4ca8-81f2-e85c496ffa49.item.number","label":"4➛NeedIt Task Record➛Number","reference":"","reference_display":"Number","type":"string","base_type":"string","parent_table_name":"x_58872_needit_needit_task","column_name":"number"},{"name":"7da2305e-8cc9-4ca8-81f2-e85c496ffa49.item.due_date","label":"4➛NeedIt Task Record➛Due date","reference":"","reference_display":"Due date","type":"glide_date_time","base_type":"glide_date_time","parent_table_name":"x_58872_needit_needit_task","column_name":"due_date"}]</label_cache>
+        <latest_snapshot/>
+        <name>Find and Close Long Overdue Needit Task</name>
+        <remote_trigger_id/>
+        <show_draft_actions>false</show_draft_actions>
+        <status>draft</status>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-02-23 21:53:20</sys_created_on>
+        <sys_id>a06e9dbddbb763007d6211203996199e</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Find and Close Long Overdue Needit Task</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_hub_flow_a06e9dbddbb763007d6211203996199e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-02-24 23:18:23</sys_updated_on>
+    </sys_hub_flow>
+</record_update>
